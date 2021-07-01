@@ -1,12 +1,14 @@
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Home from './pages/Home/Home';
 
-
-import { Button } from 'antd';
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <BrowserRouter>
+    <Switch>
+     <Route path="/" component={Home}></Route>
+     </Switch>
+   </BrowserRouter>
   );
 }
 
