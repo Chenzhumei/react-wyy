@@ -1,31 +1,34 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd';
 import './HomeCarousel.less'
+import {reqBanner} from './../../../../api/homeApi'
 
 export default class HomeCarousel extends Component {
+    state = {
+        banners:[] 
+    }
+    componentDidMount() {
+        reqBanner().then(res => {
+            const {banners} = res;
+            this.setState({banners})
+        });  
+    }
     render() {
-        const contentStyle = {
-            height:'284px',
-            color: '#fff',
-            lineHeight: '284px',
-            textAlign: 'center',
-            background: '#364d79',
-        };
+        const {banners} = this.state;
         return (
+                banners.length?
                 <Carousel style={{width:730}} autoplay>
-                    <div>
-                    <h3 style={contentStyle}>1</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>4</h3>
-                    </div>
+                    {
+                        banners.map(item => (
+                            <div key={item.targetId}>
+                                <a href={item.url} target="_blank" className="banner-item">
+                                    <img src={item.imageUrl} />
+                                </a>
+                            </div>
+                        ))
+                    }
                 </Carousel>
+                : <div>没有数据</div>
         )
     }
 }

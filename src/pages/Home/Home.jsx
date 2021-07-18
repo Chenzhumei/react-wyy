@@ -11,13 +11,15 @@ export default class Home extends Component {
                <Header />
                <SubHeader />
                <div className="content">
-                 <HomeCarousel />   
-                 <div className="download">
-                     <a href="#" className="btn">下载客户端</a>
-                     <p>PC 安卓 iPhone WP iPad Mac 六大客户端</p>
-                     <span class="shadow"></span>
-                     <span class="shadowr"></span>
-                 </div> 
+                <div className="main">
+                    <HomeCarousel />   
+                    <div className="download">
+                        <a href="#" className="btn">下载客户端</a>
+                        <p>PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+                        <span className="shadow"></span>
+                        <span className="shadowr"></span>
+                    </div> 
+                </div>
                </div>
            </Fragment>
         )
