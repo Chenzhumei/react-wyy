@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import {Route, Switch} from 'react-router-dom'
-import routers from '../../config/router'
+import {Route, Switch, Redirect} from 'react-router-dom'
+import {routers} from '../../config/router'
 import Header from '../Header/Header'
-import SubHeader from '../SubHeader/SubHeader'
+
 
 export default class Dashbord extends Component {
     render() {
@@ -10,8 +10,19 @@ export default class Dashbord extends Component {
             <Fragment>
                 <Header />
                     <Switch>
+                        <Redirect from='/' exact to='/discover'/>
                         {
-                            routers.map(item => <Route exact key={item.path} path={item.path} component={item.component}></Route>)
+                            routers.map(router=> {
+                                return (
+                                    <Route  
+                                        key={router.path} 
+                                        path={router.path} 
+                                        component={router.component}
+                                    />
+                                 
+                                )
+                            })
+                            
                         }
                     </Switch>
            </Fragment>

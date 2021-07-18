@@ -5,15 +5,19 @@ import Shop from '../pages/Shop/Shop'
 import Musician from '../pages/Musician/Musician'
 import Download from '../pages/Download/Download'
 
+import Recomend from '../pages/Discover/Recomend/Recomend'
+import Toplist from '../pages/Discover/Toplist/Toplist'
+import Playlist from '../pages/Discover/Playlist/Playlist'
+import Djradio from '../pages/Discover/Djradio/Djradio'
+import Artist from '../pages/Discover/Artist/Artist'
+import Album from '../pages/Discover/Album/Album'
 
-const routers = [
-    {
-        path:'/',
-        component: Discover
-    },
+
+
+export const routers = [
     {
         path:'/discover',
-        component: Discover
+        component: Discover 
     },
     {
         path:'/myMusic',
@@ -37,4 +41,30 @@ const routers = [
     }
 ]
 
-export default routers;
+
+export const discoverChildren =  [
+    {
+        path:'/discover/recomend',
+        component: Recomend
+    },
+    {
+        path:'/discover/toplist',
+        component: Toplist
+    },
+    {
+        path:'/discover/playlist',
+        component: Playlist
+    },
+    {
+        path:'/discover/djradio',
+        component: Djradio
+    },
+    {
+        path:'/discover/artist',
+        component: Artist
+    },
+    {
+        path:'/discover/album',
+        component: Album
+    },
+]
