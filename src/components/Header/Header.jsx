@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
+import {NavLink, withRouter} from 'react-router-dom'
 import './Header.less'
 import {Input, Button } from 'antd'
 import {SearchOutlined} from '@ant-design/icons';
 
-export default class Header extends Component {
+class Header extends Component {
    
-    mainNavItems = ['发现音乐','我的音乐','朋友','商城','音乐人','下载客户端']
+    mainNavItems = [
+        {path:'/home', name:'发现音乐'},
+        {path:'/myMusic', name:'我的音乐'},
+        {path:'/friends', name:'朋友'},
+        {path:'/shop', name:'商城'},
+        {path:'/musician', name:'音乐人'},
+        {path:'/download', name:'下载客户端'}
+    ]
 
     render() {
         const searchInputProps = {
@@ -13,6 +21,7 @@ export default class Header extends Component {
             prefix:<SearchOutlined style={{fontSize: '16px'}}/>,
             placeholder:"音乐/视频/电台/用户" 
         };
+        const path = this.props.location.pathname;
         return (
             <div className="header">
                 <div className="nav">
@@ -20,13 +29,13 @@ export default class Header extends Component {
                         <h1 className="logo"><a href="/#">网易云音乐</a></h1>
                         <ul className="main-nav">
                             {
-                                this.mainNavItems.map((item, index) => {
+                                this.mainNavItems.map((item) => {
                                     return (
-                                        <li key={index}>
-                                         <a href="/#" className={index === 0 ? 'active' : ''}>
-                                             <em>{item}</em>
-                                             <sub className={index === 0 ? "cor" : index === this.mainNavItems.length-1 ? "hot" : ""}></sub>
-                                         </a>
+                                        <li key={item.path}>
+                                            <NavLink to={item.path} activeClassName={item.path === path?'active':''}>
+                                                <em>{item.name}</em>
+                                                <sub className={item.path === path ? "cor" : item.name === '下载客户端' ? "hot" : ""}></sub>
+                                            </NavLink>
                                         </li>
                                     )
                                 })
@@ -43,3 +52,4 @@ export default class Header extends Component {
         )
     }
 }
+export default withRouter(Header)

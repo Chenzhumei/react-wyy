@@ -7,10 +7,7 @@ import HomeCarousel from './Component/HomeCarousel/HomeCarousel'
 export default class Home extends Component {
     render() {
         return (
-           <Fragment>
-               <Header />
-               <SubHeader />
-               <div className="content">
+               <div className="home">
                 <div className="main">
                     <HomeCarousel />   
                     <div className="download">
@@ -21,7 +18,6 @@ export default class Home extends Component {
                     </div> 
                 </div>
                </div>
-           </Fragment>
         )
     }
 }

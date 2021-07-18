@@ -1,15 +1,15 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Home from './pages/Home/Home';
+import Dashbord from './components/Dashbord/Dashbord'
 
 
 function App() {
   return (
-    <BrowserRouter>
-    <Switch>
-     <Route path="/" component={Home}></Route>
+   <BrowserRouter>
+     <Switch>
+       <Route path="/" component={Dashbord}></Route>
      </Switch>
    </BrowserRouter>
-  );
+  )
 }
 
 export default App;
