@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd';
 import {LeftOutlined, RightOutlined} from '@ant-design/icons'
-import './HomeCarousel.less'
-import {reqBanner} from './../../../../api/homeApi'
+import './BannerCarousel.less'
+import {reqBanner} from '../../../../api/homeApi'
 
-export default class HomeCarousel extends Component {
+export default class BannerCarousel extends Component {
     state = {
         banners:[] 
     }

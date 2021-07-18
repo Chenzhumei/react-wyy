@@ -1,4 +1,4 @@
-import Home from '../pages/Home/Home';
+import Discover from '../pages/Discover/Discover';
 import MyMusic from '../pages/MyMusic/MyMusic'
 import Friends from '../pages/Friends/Friends'
 import Shop from '../pages/Shop/Shop'
@@ -9,11 +9,11 @@ import Download from '../pages/Download/Download'
 const routers = [
     {
         path:'/',
-        component: Home
+        component: Discover
     },
     {
-        path:'/home',
-        component: Home
+        path:'/discover',
+        component: Discover
     },
     {
         path:'/myMusic',

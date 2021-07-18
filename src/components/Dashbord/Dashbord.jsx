@@ -9,7 +9,6 @@ export default class Dashbord extends Component {
         return (
             <Fragment>
                 <Header />
-                <SubHeader />
                     <Switch>
                         {
                             routers.map(item => <Route exact key={item.path} path={item.path} component={item.component}></Route>)

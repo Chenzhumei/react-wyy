@@ -1,13 +1,13 @@
-import React, { Component, Fragment  } from 'react'
-import './Home.less'
-import Header from '../../components/Header/Header'
+import React, { Component } from 'react'
+import './Discover.less'
 import SubHeader from '../../components/SubHeader/SubHeader'
-import HomeCarousel from './Component/HomeCarousel/HomeCarousel'
+import HomeCarousel from './Component/BannerCarousel/BannerCarousel'
 
-export default class Home extends Component {
+export default class Discover extends Component {
     render() {
         return (
-               <div className="home">
+               <div className="discover">
+                <SubHeader />
                 <div className="main">
                     <HomeCarousel />   
                     <div className="download">

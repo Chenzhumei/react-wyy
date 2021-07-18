@@ -7,7 +7,7 @@ import {SearchOutlined} from '@ant-design/icons';
 class Header extends Component {
    
     mainNavItems = [
-        {path:'/home', name:'发现音乐'},
+        {path:'/discover', name:'发现音乐'},
         {path:'/myMusic', name:'我的音乐'},
         {path:'/friends', name:'朋友'},
         {path:'/shop', name:'商城'},
