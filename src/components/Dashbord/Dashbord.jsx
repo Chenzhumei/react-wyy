@@ -10,7 +10,8 @@ export default class Dashbord extends Component {
             <Fragment>
                 <Header />
                     <Switch>
-                        <Redirect from='/' exact to='/discover'/>
+                        <Redirect from='/' exact to='/discover/recomend'/>
+                        <Redirect from='/discover' exact to='/discover/recomend'/>
                         {
                             routers.map(router=> {
                                 return (

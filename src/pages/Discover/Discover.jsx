@@ -9,7 +9,6 @@ export default class Discover extends Component {
         return (
                <div className="discover">
                 <SubHeader />
-                <Redirect from='/' exact to='/discover/recomend'/>
                 {          
                             discoverChildren.map(router => {
                                 return (
