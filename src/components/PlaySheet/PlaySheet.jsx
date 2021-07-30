@@ -1,21 +1,40 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './PlaySheet.less'
 
+
 export default class PlaySheet extends Component {
+    static propTypes = {
+        coverImgUrl: PropTypes.string,
+        name: PropTypes.string,
+        description: PropTypes.string,
+        playCount: PropTypes.number
+    }
+    static defaultProps = {
+        playCount: 0
+    }
+
+    showPlayCount = count => {
+      if (count % 10000) {
+         return  <span className="play-num">{(count % 10000) + '万'}</span>
+      }
+      return  <span className="play-num">{count}</span>
+    }
     render() {
+        const {coverImgUrl, name, playCount, description} = this.props;
         return (
             <div className="play-sheet">
                <div className="play-sheet-cover">
-                   <img src="http://p2.music.126.net/m96Avv3sw-EJjL8QlRFg8A==/109951165007346256.jpg?param=140y140" alt="" />
-                   <a href="" className="cover-mask"></a>
+                   <img src={coverImgUrl} alt="cover image" />
+                   <a href="#" title={description} className="cover-mask"></a>
                    <div className="bottom">
                       <a href="#" className="play-icon"></a>
                       <span className="headset-icon"></span> 
-                      <span className="play-num">740万</span>
+                      {this.showPlayCount(playCount)}
                    </div>
                </div>
                <p className="play-sheet-desc">
-                   <a href="#">翻唱｜我为你翻山越岭 却无心看风景</a>
+                   <a href="#">{name}</a>
                 </p> 
             </div>
         )

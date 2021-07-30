@@ -1,7 +1,8 @@
 .play-sheet {
     display: inline-block;
     width: 140px;
-    margin-right: 30px;
+    height: 216px;
+    margin-right: 29px;
     overflow: hidden;
     &:nth-child(4n) {
         margin-right: 0;  
@@ -60,8 +61,12 @@
     .play-sheet-desc {
         margin: 8px 0 3px;
         font-size: 14px;  
-        a {
-            display: inline-block;
+        a { 
+            display:-webkit-box; 
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:3; 
+            overflow: hidden;
+            text-overflow:ellipsis;
             max-width: 100%;
             vertical-align: middle;
             color: #000 ;
