@@ -19,13 +19,13 @@ export default class TabHeader extends Component {
              {
                  tabs.map((item, index) => {
                      if (index === length-1) {
-                        return <a href="#" className="tab-name">{item}</a>
+                        return <a key={index} href="#" className="tab-name">{item}</a>
                      } else {
                         return (
-                            <>
-                                <a href="#" className="tab-name">{item}</a>
+                            <span key={index}>
+                                <a  href="#" className="tab-name">{item}</a>
                                 <span className="line">|</span>
-                            </>
+                            </span>
                          )
                      }  
                  })
