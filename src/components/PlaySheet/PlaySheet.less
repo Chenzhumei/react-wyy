@@ -1,0 +1,69 @@
+.play-sheet {
+    display: inline-block;
+    width: 140px;
+    overflow: hidden;
+    .play-sheet-cover {
+        position: relative;
+        display: block;
+        width: 140px;
+        height: 140px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .cover-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 27px;
+            background: url('./../../assets/images/coverall.png') no-repeat;
+            background-position: 0 -537px;
+            color: #ccc;
+            .play-icon {
+                position: absolute;
+                right: 10px;
+                bottom: 5px;
+                width: 16px;
+                height: 17px;
+                background: url('./../../assets/images/iconall.png') no-repeat;
+                background-position: 0 0; 
+            }
+            .headset-icon {
+                float: left;
+                width: 14px;
+                height: 11px;
+                background: url('./../../assets/images/iconall.png') no-repeat;
+                background-position: 0 -24px;
+                margin: 9px 5px 9px 10px;
+            }
+            .play-num {
+                float: left;
+                margin: 7px 0 0 0;
+                font-size: 12px;
+                line-height: 1.1;
+            }
+        }
+    }
+    .play-sheet-desc {
+        margin: 8px 0 3px;
+        font-size: 14px;  
+        a {
+            display: inline-block;
+            max-width: 100%;
+            vertical-align: middle;
+            color: #000 ;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

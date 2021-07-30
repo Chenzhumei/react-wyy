@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BannerCarousel from './../Component/BannerCarousel/BannerCarousel'
 import TabHeader from './../Component/TabHeader/TabHeader'
+import PlaySheet from './../../../components/PlaySheet/PlaySheet'
 import './Recomend.less'
 
 export default class Recomend extends Component {
@@ -20,9 +21,18 @@ export default class Recomend extends Component {
                 </div> 
                 <div className="content">
                     <div className="left">
-                    <TabHeader {...hotRecomend}/>
-                    <TabHeader {...newAlbum}/>
-                    <TabHeader {...topSheet}/>
+                        <section>
+                            <TabHeader {...hotRecomend}/>
+                            <div className="tab-cotent">
+                             <PlaySheet/> 
+                            </div>
+                        </section>
+                        <section>
+                            <TabHeader {...newAlbum}/>
+                        </section>
+                        <section>
+                            <TabHeader {...topSheet}/>
+                        </section>
                     </div>
                     <div className="right"></div>
                 </div>
