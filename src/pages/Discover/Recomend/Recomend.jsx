@@ -23,8 +23,12 @@ export default class Recomend extends Component {
                     <div className="left">
                         <section>
                             <TabHeader {...hotRecomend}/>
-                            <div className="tab-cotent">
-                             <PlaySheet/> 
+                            <div className="tab-content clearfix">
+                             <PlaySheet className="fl"/>
+                             <PlaySheet className="fl"/>
+                             <PlaySheet className="fl"/>
+                             <PlaySheet className="fl"/>
+                             <PlaySheet className="fl"/>
                             </div>
                         </section>
                         <section>
