@@ -32,7 +32,7 @@ class Header extends Component {
                                 this.mainNavItems.map((item) => {
                                     return (
                                         <li key={item.path}>
-                                            <NavLink to={item.path} activeClassName={item.path === path?'active':''}>
+                                            <NavLink to={item.path} activeClassName={path.startsWith(item.path)?'active':''}>
                                                 <em>{item.name}</em>
                                                 <sub className={item.path === path ? "cor" : item.name === '下载客户端' ? "hot" : ""}></sub>
                                             </NavLink>
